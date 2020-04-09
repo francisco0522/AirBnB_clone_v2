@@ -12,5 +12,19 @@ mkdir -p /data/web_static/releases/test/
 echo "Holberton School" > /data/web_static/releases/test/index.html
 ln -sfn /data/web_static/releases/test/ /data/web_static/current
 chown -R ubuntu: /data/
-sed -i 'root /usr/share/nginx/html;/a location /hbnb_static/ {\n alias /data/web_static/current/;\n};' /etc/nginx/sites-available/default
+printf %s "server {
+        listen 80 default_server;
+        listen [::]:80 default_server ipv6only=on;
+        root /usr/share/nginx/html;
+        index index.html index.htm;
+        server_name localhost;
+
+        location / {
+                try_files $uri $uri/ =404;
+        }
+
+        location /hbnb_static/ {
+        alias /data/web_static/current;
+        }
+}" > /etc/nginx/sites-available/default
 service nginx restart
