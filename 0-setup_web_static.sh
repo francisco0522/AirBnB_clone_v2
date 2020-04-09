@@ -12,5 +12,5 @@ mkdir -p /data/web_static/releases/test/
 echo "Holberton School" > /data/web_static/releases/test/index.html
 ln -sfn /data/web_static/releases/test/ /data/web_static/current
 chown -R ubuntu: /data/
-#sed -i '/server_name localhost;/a location /hbnb_static/ {\n alias /data/web_static/current/;\n} permanent;' /etc/nginx/sites-available/default
+sed -i '/error_page 404 /404.html;/a location /hbnb_static/ {\n alias /data/web_static/current/;\n} permanent;' /etc/nginx/sites-available/default
 service nginx restart
