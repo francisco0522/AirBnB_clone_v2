@@ -12,5 +12,5 @@ mkdir -p /data/web_static/releases/test/
 echo "Holberton School" > /data/web_static/releases/test/index.html
 ln -sfn /data/web_static/releases/test/ /data/web_static/current
 chown -R ubuntu: /data/
-sed -i 'try_files $uri $uri/ =404;};/a location /hbnb_static/ { alias /data/web_static/current/;} permanent;' /etc/nginx/sites-available/default
+sed -i '/listen 80 default_server;/a location /hbnb_static/ { alias /data/web_static/current/;} permanent;' /etc/nginx/sites-available/default
 service nginx start
