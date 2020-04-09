@@ -20,7 +20,7 @@ mkdir -p /data/web_static/releases/test/
 echo "PASO 9"
 echo "Holberton School" > /data/web_static/releases/test/index.html
 echo "PASO 10"
-ln -sfn /data/web_static/current /data/web_static/releases/test/
+ln -sfn /data/web_static/releases/test/ /data/web_static/current
 echo "PASO 11"
 chown -R ubuntu: /data/
 echo "PASO 12"
