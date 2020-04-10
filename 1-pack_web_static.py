@@ -14,7 +14,7 @@ def do_pack():
     tgz += ".tgz"
     result = "tar -cvzf "
     result += tgz
-    result +=" web_static"
+    result += " web_static"
     if local(result) == 1:
         return None
     return tgz
