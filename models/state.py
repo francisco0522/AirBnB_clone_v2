@@ -23,7 +23,7 @@ class State(BaseModel, Base):
             cascade='all, delete, delete-orphan')
 
     @property
-    def citie(self):
+    def cities(self):
         cityes = []
         for _id, city in models.storage.all(City).items():
             if self.id == city.state_id:
