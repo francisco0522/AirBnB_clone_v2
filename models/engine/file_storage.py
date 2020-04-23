@@ -8,6 +8,7 @@ from models.city import City
 from models.amenity import Amenity
 from models.place import Place
 from models.review import Review
+from FileStorage import reload
 
 
 class FileStorage:
@@ -67,3 +68,7 @@ class FileStorage:
         """Delete obj olny if it exists"""
         if obj is not None:
             del self.__objects["{}.{}".format(obj.__class__.__name__, obj.id)]
+
+    def close(self):
+        """Close session"""
+        reload()
