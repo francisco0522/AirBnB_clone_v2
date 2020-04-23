@@ -22,13 +22,10 @@ class State(BaseModel, Base):
             'City', back_populates='state',
             cascade='all, delete, delete-orphan')
 
-    else:
-        @property
-        def cities(self):
-            """Return cities"""
-            all_cities = models.storage.all(City)
-            all_cities_state = []
-            for key, value in all_cities.items():
-                if self.id == value.state_id:
-                    all_cities_state.append(value)
-            return all_cities_state
+    @property
+    def citie(self):
+        cityes = []
+        for _id, city in models.storage.all(City).items():
+            if self.id == city.state_id:
+                cityes.append(city)
+        return cityes
