@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" type="text/css" href="../static/styles/4-common.css">
-    <link rel="stylesheet" type="text/css" href="../static/styles/styles/3-header.css">
-    <link rel="stylesheet" type="text/css" href="../static/styles/styles/3-footer.css">
-    <link rel="stylesheet" type="text/css" href="../static/styles/styles/6-filters.css">
-    <link rel="icon" href="images/icon.png" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/4-common.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/3-header.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/3-footer.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/6-filters.css') }}">
+    <link rel="icon" href="{{ url_for('static',filename='images/icon.png') }}" />
     <title>HBnB</title>
   </head>
   <body>
